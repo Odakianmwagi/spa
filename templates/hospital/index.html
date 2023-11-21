@@ -1,0 +1,387 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block maincontent %}
+<!--Main Content Start-->
+<div class="main-content">
+  <!--Welcome Section-->
+  <section class="welcome-section">
+    <div class="container">
+      <div class="row">
+        <div class="welcome-box">
+          <div class="col-md-6 col-sm-6">
+            <div class="welcome-text">
+              <div class="sectio-title-2"> <strong>Welcome to </strong>
+                <h2>LYNSPA</h2>
+              </div>
+              <p>  Wecome to our spa and recieve the best out of the best quality services from massages facials and nails.
+            The point of using Lorem</p>
+              <p>At LYN SPA, your well-being is our priority.
+                      We're dedicated to providing you with an oasis
+                      of relaxation and rejuvenation. Your satisfaction
+                      drives our passion. Thank you for choosing us, and
+                      we can't wait to continue enhancing your journey to total bliss.</p>
+              <strong class="signature">AWUOR VICTORY ANYANGO</strong>
+              <h6 class="designation">CEO LYNSPA</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="welcome-img"> <img src="{% static 'heartcare/images/lynceo.jpeg' %}" alt=""> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Welcome Section End-->
+
+  <!--Home Services Start-->
+  <section class="home-features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box">
+            <h3>Manicure services</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s.</p>
+            <a href="appointment/">Get Your Appointment</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box selected">
+            <h3>Facial services</h3>
+            <p>Facial beauty is a unique blend of features and expressions, radiating confidence, kindness, and authenticity, captivating hearts with its allure.</p>
+            <a href="contact/">Contact Us</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box">
+            <h3>Opening Hours</h3>
+            <p><span>Monday-Friday:</span> Full Day<br>
+              <span>Saturday:</span> Full Day<br>
+              <span>Sunday:</span> 7:00am - 05:00pm<br>
+            </p>
+            <a href="#">Call us: +254792009383</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Home Services End-->
+
+  <!--Services Section Start-->
+  <section class="home-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title-3"> <strong>Our services</strong>
+            <h2>Check Our Services</h2>
+          </div>
+        </div>
+
+        <!--service style 1-->
+        <div class="col-md-12">
+          <div class="service-style-1">
+            <div class="row">
+              <!--service box start-->
+              {% for service in services %}
+              <div class="col-md-3 col-sm-3">
+                <div class="service-box">
+                  <div class="ser-thumb"> <a href="{% url 'service_details' service.id %}" class="view"><i
+                        class="fa fa-heartbeat" aria-hidden="true"></i></a> <img src="{{ service.thumbnail.url }}"
+                      alt="">
+                  </div>
+                  <div class="ser-content">
+                    <h3><a href="{% url 'service_details' service.id %}">{{ service.title }}</a></h3>
+                    <p>{{ service.description|truncatewords:15 }}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              <!--service box End-->
+            </div>
+          </div>
+        </div>
+        <!--service style 1 End-->
+
+      </div>
+    </div>
+  </section>
+  <!--Services Section End-->
+
+  <!--core servicesStart-->
+  <section class="heart-care-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title-3 white"> <strong>Our Core</strong>
+            <h2>Expert Services</h2>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#service-1" aria-controls="service-1" role="tab"
+                data-toggle="tab"> <i class="fa fa-graduation-cap"></i> Experienced workers</a></li>
+            <li role="presentation"><a href="#service-2" aria-controls="service-2" role="tab" data-toggle="tab"> <i
+                  class="fa fa-check"></i> Special Care</a></li>
+            <li role="presentation"><a href="#service-3" aria-controls="service-3" role="tab" data-toggle="tab"> <i
+                  class="fa fa-cloud"></i> Comfort Environment</a></li>
+            <li role="presentation"><a href="#service-4" aria-controls="service-4" role="tab" data-toggle="tab"> <i
+                  class="fa fa-check"></i> Talented workers</a></li>
+            <li role="presentation"><a href="#service-5" aria-controls="service-5" role="tab" data-toggle="tab"> <i
+                  class="fa fa-check"></i> Innovative Work</a></li>
+            <li role="presentation"><a href="#service-6" aria-controls="service-6" role="tab" data-toggle="tab"> <i
+                  class="fa fa-umbrella"></i> Personalized Care</a></li>
+          </ul>
+        </div>
+        <div class="col-md-7 col-sm-7">
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="service-1">
+              <div class="ser-tab-text">
+                <h3>Experienced workers</h3>
+                <p> <i class="fa fa-graduation-cap"></i> Experienced workers bring valuable knowledge, skills, and adaptability to organizations. They mentor, provide historical context, and excel at problem-solving. Their contribution is vital for workforce stability and growth. Recognizing and utilizing their expertise is key to success. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Massage Techniques.</li>
+                  <li><i class="fa fa-check"></i> Nails and Skincare.</li>
+                  <li><i class="fa fa-check"></i> Holistic Wellness and product knowledge.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-2">
+              <div class="ser-tab-text">
+                <h3>Special Treatments</h3>
+                <p> <i class="fa fa-heartbeat"></i> Experienced workers bring valuable knowledge, skills, and adaptability to organizations. They mentor, provide historical context, and excel at problem-solving. Their contribution is vital for workforce stability and growth. Recognizing and utilizing their expertise is key to success. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Massage Techniques.</li>
+                  <li><i class="fa fa-check"></i> Nails and Skincare..</li>
+                  <li><i class="fa fa-check"></i> Holistic Wellness and product knowledge.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-3">
+              <div class="ser-tab-text">
+                <h3>Comfort Environment</h3>
+                <p> <i class="fa fa-cloud"></i> Experienced workers bring valuable knowledge, skills, and adaptability to organizations. They mentor, provide historical context, and excel at problem-solving. Their contribution is vital for workforce stability and growth. Recognizing and utilizing their expertise is key to success. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Massage Techniques.</li>
+                  <li><i class="fa fa-check"></i> Nails and Skincare.</li>
+                  <li><i class="fa fa-check"></i> Holistic Wellness and product knowledge.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-4">
+              <div class="ser-tab-text">
+                <h3>Talented Cardiologist</h3>
+                <p> <i class="fa fa-user-md"></i>Experienced workers bring valuable knowledge, skills, and adaptability to organizations. They mentor, provide historical context, and excel at problem-solving. Their contribution is vital for workforce stability and growth. Recognizing and utilizing their expertise is key to success. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Massage Techniques.</li>
+                  <li><i class="fa fa-check"></i> Nails and Skincare.</li>
+                  <li><i class="fa fa-check"></i> Holistic Wellness and product knowledge.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-5">
+              <div class="ser-tab-text">
+                <h3>High Tech Equipments</h3>
+                <p> <i class="fa fa-medkit"></i> Experienced workers bring valuable knowledge, skills, and adaptability to organizations. They mentor, provide historical context, and excel at problem-solving. Their contribution is vital for workforce stability and growth. Recognizing and utilizing their expertise is key to success. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Massage Techniques.</li>
+                  <li><i class="fa fa-check"></i> Nails and Skincare.</li>
+                  <li><i class="fa fa-check"></i> Holistic Wellness and product knowledge.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-6">
+              <div class="ser-tab-text">
+                <h3>Personalized Care</h3>
+                <p> <i class="fa fa-umbrella"></i> Experienced workers bring valuable knowledge, skills, and adaptability to organizations. They mentor, provide historical context, and excel at problem-solving. Their contribution is vital for workforce stability and growth. Recognizing and utilizing their expertise is key to success. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Massage Techniques.</li>
+                  <li><i class="fa fa-check"></i> Nails and Skincare.</li>
+                  <li><i class="fa fa-check"></i> Holistic Wellness and product knowledge.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--lynspa End-->
+
+
+  <!--Team Start-->
+  <section class="team">
+    <div class="container">
+      <div class="row">
+        <div class="section-title-3"> <strong>Our Team</strong>
+          <h2>Expert Team</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for doctor in experts|slice:':4' %}
+        <div class="col-md-3 col-sm-6">
+          <div class="team-box mb50">
+            <div class="team-thumb"> <a href="{% url 'doctor_details' doctor.id %}" class="view"><i class="fa fa-Heart"
+                  aria-hidden="true"></i></a> <img src="{{ doctor.picture.url }}" alt=""></div>
+            <div class="team-text">
+              <h5><a href="{% url 'doctor_details' doctor.id %}">{{ doctor.name }}</a></h5>
+              <strong>{{ doctor.speciality }}</strong>
+              <ul class="team-social">
+                {% if doctor.twitter %}
+                <li><a class="tw" href="{{ doctor.twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                {% endif %}
+                {% if doctor.facebook %}
+                <li><a class="fb" href="{{ doctor.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                {% endif %}
+                {% if doctor.instagram %}
+                <li><a class="insta" href="{{ doctor.instagram }}"><i class="fa fa-instagram"
+                      aria-hidden="true"></i></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--Team End-->
+
+
+  <!--Testimonials + Faqs Start-->
+  <section class="testi-faq">
+    <div class="container">
+      <div class="row">
+
+        <!--Testimonials Start-->
+        <div class="col-md-6">
+          <div class="home-testimonials">
+            <div class="sectio-title-2"> <strong>Read What Our</strong>
+              <h2>Happy client says</h2>
+            </div>
+            <div id="testimonial-slider" class="owl-carousel owl-theme">
+
+              <!--Slider Start-->
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/lynceo.jpeg' %}" alt=""> <strong> Elizabeth
+                  Oluoch </strong>
+                    <i>A Massage Client</i> </div>
+                  <div class="test-text">
+                    <p>My spa experience was outstanding! The staff's welcoming ambiance, skilled therapist, and attention to detail created a truly relaxing visit. I left feeling rejuvenated and pampered, and I can't wait to return. Thank you for exceeding my expectations!
+                    </p>
+                  </div>
+                </div>
+              </div>
+                <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/stacy.jpeg' %}" alt=""> <strong> STACY AKINYI</strong>
+                    <i>A Massage Client</i> </div>
+                  <div class="test-text">
+                    <p>My spa experience was outstanding! The staff's welcoming ambiance, skilled therapist, and attention to detail created a truly relaxing visit. I left feeling rejuvenated and pampered, and I can't wait to return. Thank you for exceeding my expectations!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/lynceo.jpeg' %}" alt=""> <strong>Hermosa
+                      Chica</strong>
+                    <i>Nail Client</i> </div>
+                  <div class="test-text">
+                    <p>I had a fantastic nail experience! The nail technician was skilled and meticulous, giving me the perfect manicure. The salon's ambiance was soothing, and the attention to hygiene was reassuring. I'm thrilled with the results and look forward to my next visit. Thank you for the excellent service!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/bars.png' %}" alt=""> <strong>Sydney
+                      smith</strong>
+                    <i>hair Client</i> </div>
+                  <div class="test-text">
+                    <p>I'm thrilled with my haircut! The stylist listened to my preferences and delivered a perfect result. The salon's atmosphere was welcoming, and the staff was friendly and professional. I can't wait to show off my new look. Thanks for the fantastic service!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!--Slider End-->
+
+            </div>
+          </div>
+        </div>
+        <!--Testimonials End-->
+
+        <!--FAQ Start-->
+        <div class="col-md-6">
+          <div class="home-faq">
+            <div class="sectio-title-2"> <strong>Feel Free For</strong>
+              <h2>Any FAQ’s</h2>
+            </div>
+            <div class="faqs">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> What is the pricing structure for your spa services, and are there any current promotions or discounts available? </a> </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body"> We offer a wide range of services, including massages, facials, body treatments, and more. Our experienced staff can help you choose the perfect treatment based on your preferences and wellness goals. </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Do you offer any membership or loyalty programs for regular spa-goers? </a> </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body"> Yes, we have a loyalty program that rewards our regular guests with exclusive discounts and benefits. Ask our staff for more details on how to become a member. </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree"> Can I purchase gift certificates or spa packages for special occasions or as gifts? </a> </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                    aria-labelledby="headingThree">
+                    <div class="panel-body"> Yes, we offer gift certificates and spa packages that make for perfect gifts. Treat your loved ones to a memorable spa experience with our customizable options. </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FAQ End-->
+           <!-- Map section -->
+  <section>
+    <div class="map_container" id="map">
+       <div class="heading_container heading_center">
+      <h1><strong>Locate us using this map.</strong></h1>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6751497129476!2d36.
+      71720777496593!3d-1.3715983986154263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+      1!3m3!1m2!1s0x182f05742e6e2e09%3A0x85659639df109caa!2sDestiny%20Best%20supermarket%20Gataka!
+      5e0!3m2!1sen!2ske!4v1697400756938!5m2!1sen!2ske"
+              width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+  </section>
+  <!-- end map section -->
+
+      </div>
+    </div>
+  </section>
+  <!--Testimonials + Faqs End-->
+
+</div>
+<!--Main Content End-->
+{% endblock maincontent %}
